@@ -6,8 +6,8 @@ def sout = new StringBuilder(), serr= new StringBuilder()
 print "hello there muneeb"
 
 println "=================="
-config = new ConfigSlurper().parse(new File('authorization.groovy').toURL())
-println(config)
+//config = new ConfigSlurper().parse(new File('authorization.groovy').toURL())
+//println(config)
 println "==================="
 
 def projectRoot = WORKSPACE + "/$PROJECT/"
@@ -24,6 +24,7 @@ folder("$PROJECT")
 
 new File("$projectRoot/alfred/pipelines").eachFile()
 {   file->
+    println "project_root :: $projectRoot"
     println "Pipeline config:"
     println file.text
     def config = new ConfigSlurper().parse(file.text)
