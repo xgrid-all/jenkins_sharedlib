@@ -7,8 +7,8 @@ print "hello there muneeb"
 
 println "=================="
 //config = new ConfigSlurper().parse(new File('authorization.groovy').toURL())
-def config = new ConfigSlurper().parse(new File('test/authorization.groovy').toURL())
-println(config)
+def myconfig = new ConfigSlurper().parse(new File('test/authorization.groovy').toURL())
+println(myconfig)
 println "==================="
 
 def projectRoot = WORKSPACE + "/$PROJECT/"
