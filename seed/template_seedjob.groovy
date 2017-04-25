@@ -5,6 +5,11 @@ def sout = new StringBuilder(), serr= new StringBuilder()
 
 print "hello there muneeb"
 
+println "=================="
+config = new ConfigSlurper().parse(new File('authorization.groovy').toURL())
+println(config)
+println "==================="
+
 def projectRoot = WORKSPACE + "/$PROJECT/"
 def clone = "git clone $PROJECTURL".execute(null, new File(WORKSPACE + "/"))
 clone.consumeProcessOutput(sout, serr)
