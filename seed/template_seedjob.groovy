@@ -4,6 +4,9 @@
 def sout = new StringBuilder(), serr= new StringBuilder()
 
 print "hello there muneeb"
+def scriptDir = getClass().protectionDomain.codeSource.location.path
+
+println(scriptDir)
 
 println "=================="
 //config = new ConfigSlurper().parse(new File('authorization.groovy').toURL())
