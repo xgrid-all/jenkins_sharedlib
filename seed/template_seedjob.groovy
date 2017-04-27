@@ -7,7 +7,7 @@ print "hello there muneeb"
 
 println "=================="
 //config = new ConfigSlurper().parse(new File('authorization.groovy').toURL())
-def myconfig = new ConfigSlurper().parse(new File('authorization.groovy').toURL())
+def myconfig = new ConfigSlurper().parse(new File('src/authorization.groovy').toURL())
 println(myconfig)
 println "==================="
 
