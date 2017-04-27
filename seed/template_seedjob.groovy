@@ -4,7 +4,7 @@
 //def sout = new StringBuilder(), serr= new StringBuilder()
 
 println "-----1------"
-def cfg = readFileFromWorkspace('config.ini')
+def cfg = readFileFromWorkspace('config.cfg')
 def config = new ConfigSlurper().parse(cfg)
 
 println "----- 2 -----"
