@@ -7,7 +7,7 @@ def cfg = readFileFromWorkspace('config.cfg')
 def config = new ConfigSlurper().parse(cfg)
 println(config.git_url)
 
-def myurl = '$config.git_url' + 'ats.git'
+def myurl = config.git_url + 'ats.git'
 println "==================="
 println(myurl)
 
