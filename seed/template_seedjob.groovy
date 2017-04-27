@@ -8,13 +8,14 @@ def scriptDir = getClass().protectionDomain.codeSource.location.path
 
 println(scriptDir)
 
-def alfred_list = readFileFromWorkspace('seed/authorization.groovy')
-println(alfred_list)
+def cfg = readFileFromWorkspace('seed/authorization.groovy')
+println(cfg)
 
 println "=================="
 //config = new ConfigSlurper().parse(new File('authorization.groovy').toURL())
-def myconfig = new ConfigSlurper().parse(new File('src/authorization.groovy').toURL())
-println(myconfig)
+//def myconfig = new ConfigSlurper().parse(new File('src/authorization.groovy').toURL())
+def config = new ConfigSlurper().parse(cfg)
+println(config)
 println "==================="
 
 
