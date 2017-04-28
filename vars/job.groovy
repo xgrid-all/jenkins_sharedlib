@@ -10,7 +10,7 @@ def call(body) {
   println "========== Loading configuration ======="
   // Load default configurations
   @Grab(group='org.apache.commons', module='commons-io', version='1.3.2')
-  def cfg_file = readFile('config.ini')
+  def cfg_file = readFile 'config.ini'
   def config = new ConfigSlurper().parse(cfg_file)
   
   // Loading jenkins jenkinsLibrary
