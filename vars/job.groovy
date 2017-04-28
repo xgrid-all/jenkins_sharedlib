@@ -7,10 +7,16 @@ def call(body) {
   body.delegate = args
   body()
   
+  // Load default configurations
+  @Grab(group='org.apache.commons', module='commons-io', version='1.3.2')
+  def cfg_file = readFileFromWorkspace('config.ini')
+  def config = new ConfigSlurper().parse(cfg_file)
+  
   // Loading jenkins jenkinsLibrary
   def lib = new utils.JenkinsLibrary()
   
-  def repo = "ssh://git@172.19.0.77:29418/source/${args.clone_repos}.git"
+  def repourl = config.git_url + "${args.clone_repos}.git"
+  //def repo = "ssh://git@172.19.0.77:29418/source/${args.clone_repos}.git"
   
     node(args.label)
     {
@@ -21,7 +27,7 @@ def call(body) {
 
       stage ('Clone')
       {
-          git credentialsId: 'jenkins', url: repo
+          git credentialsId: 'jenkins', url: repourl
       }
 
       def value = lib.countStages(args)
