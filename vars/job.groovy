@@ -7,6 +7,7 @@ def call(body) {
   body.delegate = args
   body()
   
+  println "========== Loading configuration ======="
   // Load default configurations
   @Grab(group='org.apache.commons', module='commons-io', version='1.3.2')
   def cfg_file = readFileFromWorkspace('config.ini')
@@ -15,7 +16,9 @@ def call(body) {
   // Loading jenkins jenkinsLibrary
   def lib = new utils.JenkinsLibrary()
   
+  
   def repourl = config.git_url + "${args.clone_repos}.git"
+  println(repourl)
   //def repo = "ssh://git@172.19.0.77:29418/source/${args.clone_repos}.git"
   
     node(args.label)
